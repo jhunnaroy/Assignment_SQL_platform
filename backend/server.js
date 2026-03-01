@@ -9,25 +9,24 @@ const queryRoutes = require("./routes/queryRoutes");
 const hintRoutes = require("./routes/hintRoutes");
 const authRoutes = require("./routes/authRoutes");
 
-
-
 const app = express();
 
 connectMongo();
 
+// ✅ FIX HERE
 app.use(cors({
-  origin: process.env.FRONTEND_UR,
+  origin: process.env.FRONTEND_URL,
   credentials: true,
 }));
 
 app.use(express.json());
-app.use("/api/auth", authRoutes);
 
+app.use("/api/auth", authRoutes);
 app.use("/api/assignments", assignmentRoutes);
 app.use("/api/run-query", queryRoutes);
 app.use("/api/get-hint", hintRoutes);
 
-const PORT = process.env.PORT ||9000;
+const PORT = process.env.PORT || 9000;
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
