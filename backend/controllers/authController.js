@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 
 exports.register = async (req, res) => {
   try {
-       console.log("Incoming Body:", req.body); // 👈 ADD THIS
+       console.log("Incoming Body:", req.body); // 
     const { name, email, password } = req.body;
 
     // Validation
