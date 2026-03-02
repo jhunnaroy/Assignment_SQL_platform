@@ -13,7 +13,7 @@ const app = express();
 
 connectMongo();
 
-// ✅ FIX HERE
+//  FIX HERE
 app.use(cors({
   origin: process.env.FRONTEND_URL,
   credentials: true,
